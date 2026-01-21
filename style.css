@@ -653,6 +653,18 @@ body {
     margin: 0 auto;
 }
 
+.contact-info {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
 .contact-form {
     width: 100%;
     display: flex;
@@ -717,6 +729,36 @@ body {
 .submit-btn:active {
     transform: translateY(2px);
     box-shadow: 0 0px 0 rgba(139, 92, 246, 0.3);
+}
+
+/* ===== Form Message ===== */
+.form-message {
+    min-height: 20px;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.form-message.loading {
+    opacity: 1;
+    color: var(--text-muted);
+}
+
+.form-message.success {
+    opacity: 1;
+    background: rgba(124, 179, 66, 0.1);
+    color: #7cb342;
+    border: 1px solid rgba(124, 179, 66, 0.3);
+}
+
+.form-message.error {
+    opacity: 1;
+    background: rgba(255, 0, 110, 0.1);
+    color: #ff006e;
+    border: 1px solid rgba(255, 0, 110, 0.3);
 }
 
 /* ===== Footer ===== */

@@ -192,6 +192,10 @@ if (form) {
             formData.append('_subject', `New Message from ${nameInput.value} - Silent Brother Production House`);
             formData.append('_template', 'table');
 
+            const messageDiv = document.getElementById('formMessage');
+            messageDiv.textContent = 'Sending message...';
+            messageDiv.className = 'form-message loading';
+
             const response = await fetch('https://formsubmit.co/dualozonebusiness@gmail.com', {
                 method: 'POST',
                 body: formData
@@ -200,6 +204,8 @@ if (form) {
             if (response.ok) {
                 button.textContent = 'Message Sent! ✓';
                 button.style.background = 'linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)';
+                messageDiv.textContent = '✓ Your message has been sent successfully';
+                messageDiv.className = 'form-message success';
                 
                 // Reset form
                 setTimeout(() => {
@@ -207,7 +213,8 @@ if (form) {
                     button.textContent = originalText;
                     button.style.background = '';
                     button.disabled = false;
-                }, 2000);
+                    messageDiv.textContent = '';
+                }, 3000);
             } else {
                 throw new Error('Failed to send message');
             }
@@ -215,6 +222,9 @@ if (form) {
             console.error('Error sending email:', error);
             button.textContent = 'Error sending message';
             button.style.background = 'linear-gradient(135deg, #ff006e 0%, #ff4d94 100%)';
+            const messageDiv = document.getElementById('formMessage');
+            messageDiv.textContent = '✗ Failed to send message. Please try again.';
+            messageDiv.className = 'form-message error';
             
             setTimeout(() => {
                 button.textContent = originalText;
