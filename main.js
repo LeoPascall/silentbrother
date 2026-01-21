@@ -284,5 +284,28 @@ window.addEventListener('scroll', () => {
     }
 }, { passive: true });
 
-// ===== Initialize =====
-console.log('🎬 Silent Brother Production House - Ready');
+// ===== Mobile Menu Toggle =====
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar')) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+    }
+});
+
