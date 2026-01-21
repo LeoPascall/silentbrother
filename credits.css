@@ -1,0 +1,484 @@
+/* ===== Credits Page Styles ===== */
+
+/* Hero Section */
+.credits-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: 80px;
+}
+
+/* Cast & Crew Sections */
+.cast-section,
+.directors-section,
+.crew-section {
+    min-height: auto;
+    padding: 6rem 2rem;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Crew Grid */
+.crew-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.crew-card {
+    background: rgba(45, 27, 78, 0.6);
+    border: 2px solid rgba(139, 92, 246, 0.3);
+    border-radius: 0px;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    display: flex;
+    flex-direction: column;
+    will-change: opacity, transform, border-color;
+    box-shadow: 4px 4px 0 rgba(139, 92, 246, 0.15);
+}
+
+.crew-card.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.crew-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-10px);
+    box-shadow: 4px 4px 0 var(--accent), 0 20px 40px rgba(139, 92, 246, 0.2);
+    background: rgba(45, 27, 78, 0.9);
+}
+
+.crew-card.featured-card {
+    grid-column: 1 / -1;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.crew-card.featured-card .crew-image {
+    height: 400px;
+}
+
+/* Crew Image */
+.crew-image {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.crew-image::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Crew Info */
+.crew-info {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.crew-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.crew-role {
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.crew-bio {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Crew Stats */
+.crew-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Portfolio Links */
+.crew-portfolio {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.portfolio-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: rgba(139, 92, 246, 0.1);
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 0px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 2px 2px 0 rgba(139, 92, 246, 0.2);
+}
+
+.portfolio-link:hover {
+    background: var(--accent);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 0 var(--accent), 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+.portfolio-link.collab-link {
+    background: var(--accent);
+    color: var(--primary-dark);
+}
+
+.portfolio-link.collab-link:hover {
+    background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
+}
+
+/* Crew List */
+.crew-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.crew-role-group {
+    background: rgba(45, 27, 78, 0.4);
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    border-radius: 0px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 3px 3px 0 rgba(139, 92, 246, 0.1);
+}
+
+.crew-role-group:hover {
+    border-color: var(--accent);
+    background: rgba(45, 27, 78, 0.6);
+    box-shadow: 3px 3px 0 var(--accent), 0 10px 30px rgba(139, 92, 246, 0.1);
+}
+
+.role-title {
+    color: var(--accent);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.crew-roles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.role-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.role-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.role-name {
+    display: block;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.role-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Collaboration Section */
+.collaboration-section {
+    padding: 6rem 2rem;
+    background: rgba(45, 27, 78, 0.3);
+}
+
+.collab-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.collab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.collab-card {
+    background: rgba(45, 27, 78, 0.6);
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    border-radius: 0px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    box-shadow: 3px 3px 0 rgba(139, 92, 246, 0.1);
+}
+
+.collab-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.collab-card:hover {
+    border-color: var(--accent);
+    background: rgba(45, 27, 78, 0.9);
+    transform: translateY(-10px);
+    box-shadow: 3px 3px 0 var(--accent), 0 15px 40px rgba(139, 92, 246, 0.15);
+}
+
+.collab-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.collab-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.collab-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.collab-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 0px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 0 rgba(139, 92, 246, 0.3);
+}
+
+.collab-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(139, 92, 246, 0.5), 0 10px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* Contact Collaboration Form */
+.contact-collab {
+    padding: 6rem 2rem;
+}
+
+.collab-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.collab-form input,
+.collab-form select,
+.collab-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(45, 27, 78, 0.8);
+    border: 2px solid rgba(139, 92, 246, 0.2);
+    border-radius: 0px;
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.collab-form input::placeholder,
+.collab-form select,
+.collab-form textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.collab-form input:focus,
+.collab-form select:focus,
+.collab-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(45, 27, 78, 1);
+    box-shadow: inset 0 0 10px rgba(139, 92, 246, 0.1), 0 0 15px rgba(139, 92, 246, 0.2);
+}
+
+.collab-form select {
+    cursor: pointer;
+}
+
+.collab-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-tertiary) 100%);
+    color: white;
+    border: none;
+    border-radius: 0px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 0 rgba(139, 92, 246, 0.3);
+}
+
+.collab-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 rgba(139, 92, 246, 0.5), 0 10px 30px rgba(139, 92, 246, 0.4);
+}
+
+/* 3D Canvas Container */
+.canvas-3d {
+    width: 100%;
+    height: 600px;
+    margin: 4rem 0;
+    border: 3px solid rgba(139, 92, 246, 0.3);
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: 0 15px 0 rgba(139, 92, 246, 0.1), 0 20px 60px rgba(139, 92, 246, 0.2);
+    cursor: grab;
+    position: relative;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.canvas-3d:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 15px 0 rgba(139, 92, 246, 0.2), 0 20px 60px rgba(139, 92, 246, 0.4);
+}
+
+.canvas-3d:active {
+    cursor: grabbing;
+}
+
+#canvas-3d canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Active Page Indicator */
+.active-page {
+    color: var(--accent) !important;
+}
+
+.active-page::after {
+    width: 100% !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .credits-hero {
+        margin-top: 60px;
+        min-height: 80vh;
+    }
+
+    .crew-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .crew-card.featured-card {
+        grid-column: 1;
+    }
+
+    .crew-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .cast-section,
+    .directors-section,
+    .crew-section,
+    .collaboration-section,
+    .contact-collab {
+        padding: 4rem 1.5rem;
+    }
+
+    .crew-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .collab-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .canvas-3d {
+        height: 400px;
+    }
+}
