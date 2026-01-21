@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Production House - Silent Brother</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Silent Brother - Cinematic Storytelling</title>
+    <link rel="icon" type="image/png" href="https://surprised-lavender-zzc35dj0lk.edgeone.app/ChatGPT%20Image%20Jan%2022,%202026,%2001_10_07%20AM.png">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <!-- Interactive Background -->
+    <!-- Background -->
     <div class="background-container">
         <canvas id="bg-canvas"></canvas>
         <div class="gradient-overlay"></div>
@@ -17,281 +18,283 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-text">●</span>
-                <span class="logo-label">Silent Brother</span>
+                <div class="logo-icon">●</div>
+                <span class="logo-text">Silent Brother</span>
             </div>
             <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
             </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#featured" class="nav-link">Featured</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="credits.html" class="nav-link">Credits</a></li>
+                <li><a href="#story" class="nav-link">Story</a></li>
+                <li><a href="credits.html" class="nav-link">Team</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="hero" class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title fade-in">Cinematic Storytelling</h1>
-            <p class="hero-subtitle fade-in">Minecraft storytelling with cinema-quality production</p>
-            <p class="hero-description fade-in">Premium narratives, optimized costs, zero compromises on quality</p>
-            <button class="cta-button fade-in" onclick="document.getElementById('approach').scrollIntoView({behavior:'smooth'})">Explore Our Approach</button>
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Cinematic</span>
+                    <span class="gradient-text-alt">Storytelling</span>
+                </h1>
+                <p class="hero-subtitle">Minecraft Cinema - Where Pixels Become Reality</p>
+                <p class="hero-description">Professional cinematography meets gaming innovation. We craft premium narratives that transcend expectations.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">Explore Now</button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">Our Story</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <span>🎬</span>
+                </div>
+                <div class="floating-card card-2">
+                    <span>🎥</span>
+                </div>
+                <div class="floating-card card-3">
+                    <span>✨</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Our Approach Section -->
-    <section id="approach" class="our-approach">
-        <div class="approach-container">
-            <h2 class="section-title">Our Philosophy</h2>
-            <p class="approach-intro">We tell stories the smart way - using Minecraft as our canvas to deliver cinema-quality narratives without compromising quality.</p>
+
+    <!-- Featured Project -->
+    <section id="featured" class="featured-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Project</h2>
+                <p class="section-subtitle">Meet Silent Brother</p>
+            </div>
             
-            <div class="approach-grid">
-                <div class="approach-card">
-                    <div class="approach-icon">🎬</div>
-                    <h3>Cost-Effective VFX</h3>
-                    <p>By leveraging Minecraft, we eliminate expensive physical set building and VFX costs while maintaining professional cinematography standards.</p>
+            <div class="featured-grid">
+                <div class="featured-visual">
+                    <div class="featured-image">
+                        <div class="image-gradient"></div>
+                        <div class="image-overlay">🎬 SILENT BROTHER</div>
+                    </div>
                 </div>
-                
-                <div class="approach-card">
-                    <div class="approach-icon">🎥</div>
-                    <h3>Reduced Crew Requirements</h3>
-                    <p>Streamlined production pipeline means smaller teams can achieve blockbuster-level results without sacrificing creative vision.</p>
-                </div>
-                
-                <div class="approach-card">
-                    <div class="approach-icon">🌟</div>
-                    <h3>Premium Quality Output</h3>
-                    <p>Professional cinematography, color grading, sound design, and editing ensure every frame meets cinema standards.</p>
-                </div>
-                
-                <div class="approach-card">
-                    <div class="approach-icon">⚡</div>
-                    <h3>Faster Production</h3>
-                    <p>No location scouting, no weather delays, no physical constraints - just pure creative freedom and efficiency.</p>
-                </div>
-            </div>
-
-            <div class="approach-statement">
-                <p><strong>Our Goal:</strong> Deliver the most effective storytelling without compromising quality or creative integrity. We've learned from past challenges and evolved into a mature production house that understands both the creative and technical aspects of cinematic storytelling.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Silent Brother Featured Project Section -->
-    <section id="silent-brother" class="featured-project">
-        <div class="featured-container">
-            <div class="featured-header">
-                <span class="project-tag">Featured Project</span>
-                <h2 class="featured-title">Silent Brother</h2>
-                <p class="featured-subtitle">Where Minecraft becomes Cinema</p>
-            </div>
-
-            <div class="featured-content">
-                <div class="featured-image">
-                    <div class="image-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);"></div>
-                </div>
-            </div>
-
-            <div class="featured-text">
-                <div class="featured-description">
-                    <p>Silent Brother is an ambitious cinematic narrative experience crafted entirely within Minecraft, transcending the boundaries of what gaming platforms can achieve in storytelling.</p>
+                <div class="featured-info">
+                    <h3 class="featured-title">Silent Brother</h3>
+                    <p class="featured-desc">An ambitious cinematic experience crafted entirely within Minecraft, transcending platform limitations with professional-grade production.</p>
                     
-                    <p>Using cutting-edge cinematic camera techniques, realistic resource packs, and advanced visual effects, we transform the pixelated world into a photorealistic cinematic universe. Every frame is meticulously shot with professional cinematography standards, creating an immersive story that blurs the line between virtual and reality.</p>
-                </div>
+                    <div class="featured-specs">
+                        <div class="spec">
+                            <span class="spec-label">Platform</span>
+                            <span class="spec-value">Minecraft Cinema</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Style</span>
+                            <span class="spec-value">Photorealistic</span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Quality</span>
+                            <span class="spec-value">Professional</span>
+                        </div>
+                    </div>
 
-                <div class="production-specs">
-                    <div class="spec-item">
-                        <h4>Platform</h4>
-                        <p>Minecraft Cinematic</p>
+                    <div class="featured-highlights">
+                        <h4>Production Highlights</h4>
+                        <ul class="highlights-list">
+                            <li>🎥 Advanced Cinematic Camera Work</li>
+                            <li>✨ High-Fidelity Resource Packs</li>
+                            <li>🎬 Custom VFX & Animation</li>
+                            <li>🎙️ Professional Voice Acting</li>
+                            <li>🎵 Immersive Sound Design</li>
+                            <li>🎨 Expert Color Grading</li>
+                        </ul>
                     </div>
-                    <div class="spec-item">
-                        <h4>Visual Approach</h4>
-                        <p>Photorealistic Rendering</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>Production Elements</h4>
-                        <p>Cinematography & VFX</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>Team</h4>
-                        <p>Professional Cast & Crew</p>
-                    </div>
-                </div>
-
-                <div class="production-features">
-                    <h3>Production Highlights</h3>
-                    <ul class="features-list">
-                        <li>Advanced cinematic camera work and perspective angles</li>
-                        <li>High-fidelity resource packs for realistic textures and materials</li>
-                        <li>Custom 3D animation sequences and visual effects</li>
-                        <li>Professional script writing with compelling narrative depth</li>
-                        <li>Expert editing and color grading for cinematic quality</li>
-                        <li>Professional voice acting and cast performance</li>
-                        <li>Immersive sound design and ambient audio</li>
-                        <li>Post-production VFX and motion graphics</li>
-                    </ul>
+                    
+                    <button class="btn btn-primary">Learn More</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2 class="section-title">Our Productions</h2>
-        
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                <h3 class="project-title">Silent Brother</h3>
-                <p class="project-description">A gripping narrative presented through Minecraft cinematics with professional production quality</p>
-                <a href="#silent-brother" class="project-link">Learn More →</a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-                <h3 class="project-title">In Development</h3>
-                <p class="project-description">Next chapter in cinematic gaming storytelling</p>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                <h3 class="project-title">Coming Soon</h3>
-                <p class="project-description">Revolutionary stories waiting to be told</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Past Work & Story Portfolio Section -->
-    <section id="past-work" class="past-work">
+    <!-- Projects Grid -->
+    <section id="projects" class="projects-section">
         <div class="section-container">
-            <h2 class="section-title">Our Story Journey</h2>
-            <p class="section-subtitle">Past projects that shaped our creative evolution. We've learned from challenges and grown as storytellers.</p>
-            
-            <div class="past-work-grid">
-                <div class="past-work-card">
-                    <div class="video-embed">
-                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/mXs7pAT7ghw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="section-header">
+                <h2 class="section-title">Our Productions</h2>
+                <p class="section-subtitle">Explore Our Universe</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🎬</div>
+                        <h3 class="project-title">Silent Brother</h3>
                     </div>
-                    <div class="work-info">
-                        <h3>Story Project #1</h3>
-                        <p>Our first cinematic attempt in Minecraft, showcasing the beginning of our journey into quality storytelling.</p>
-                        <a href="https://youtu.be/mXs7pAT7ghw" class="work-link" target="_blank">Watch on YouTube →</a>
+                    <p class="project-text">Gripping narrative through Minecraft cinematics with professional production quality and compelling storytelling.</p>
+                    <div class="project-footer">
+                        <span class="project-tag">Featured</span>
                     </div>
                 </div>
 
-                <div class="past-work-card">
-                    <div class="video-embed">
-                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/7an2ChxkVEA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🌟</div>
+                        <h3 class="project-title">In Development</h3>
                     </div>
-                    <div class="work-info">
-                        <h3>Story Project #2</h3>
-                        <p>Building upon our experience, this project refined our narrative techniques and production quality.</p>
-                        <a href="https://youtu.be/7an2ChxkVEA" class="work-link" target="_blank">Watch on YouTube →</a>
+                    <p class="project-text">Next chapter in cinematic gaming storytelling, pushing creative boundaries with innovative narrative techniques.</p>
+                    <div class="project-footer">
+                        <span class="project-tag">Coming</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">⚡</div>
+                        <h3 class="project-title">Future Vision</h3>
+                    </div>
+                    <p class="project-text">Revolutionary stories waiting to be told, reshaping the landscape of digital cinematography and gaming narrative.</p>
+                    <div class="project-footer">
+                        <span class="project-tag">Soon</span>
                     </div>
                 </div>
             </div>
-
-            <p class="journey-note">These projects faced internal challenges and creative differences that taught us valuable lessons. Today, we apply this maturity to create better, more cohesive stories.</p>
         </div>
     </section>
 
-    <!-- Gaming Organization History Section -->
-    <section id="gaming-history" class="gaming-history">
+    <!-- Story Section -->
+    <section id="story" class="story-section">
         <div class="section-container">
-            <h2 class="section-title">Gaming Organization Legacy</h2>
-            <p class="section-subtitle">Before focusing on cinematic storytelling, we ran a competitive BGMI organization with professional scrims and collaborators.</p>
-            
-            <div class="gaming-grid">
-                <div class="scrim-card">
-                    <h3>Day 1 - BGMI Scrims</h3>
-                    <p>Opening day of our competitive gaming scrimmages with collaborators</p>
-                    <a href="https://www.youtube.com/live/B5dW7iD1wAU" class="gaming-link" target="_blank">Watch Stream →</a>
+            <div class="section-header">
+                <h2 class="section-title">Our Journey</h2>
+                <p class="section-subtitle">From Gaming to Cinematic Excellence</p>
+            </div>
+
+            <div class="story-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Foundation</h3>
+                        <p>Beginning with competitive gaming, we learned the essence of teamwork, strategy, and engagement.</p>
+                    </div>
                 </div>
 
-                <div class="scrim-card">
-                    <h3>Day 2 - BGMI Scrims</h3>
-                    <p>Building competitive momentum with intense gameplay matches</p>
-                    <a href="https://www.youtube.com/live/0jI6Pl4r-P0" class="gaming-link" target="_blank">Watch Stream →</a>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Evolution</h3>
+                        <p>Transitioning to cinematic storytelling, we discovered the power of narrative in digital media.</p>
+                    </div>
                 </div>
 
-                <div class="scrim-card">
-                    <h3>Day 3 - BGMI Scrims</h3>
-                    <p>Showcasing team coordination and strategic gameplay</p>
-                    <a href="https://www.youtube.com/live/Ov1vDgcaiJM" class="gaming-link" target="_blank">Watch Stream →</a>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Excellence</h3>
+                        <p>Combining experience with innovation, creating professional-grade productions using Minecraft as our canvas.</p>
+                    </div>
                 </div>
 
-                <div class="scrim-card">
-                    <h3>Day 4 - BGMI Scrims</h3>
-                    <p>High-stakes competition with professional teams</p>
-                    <a href="https://www.youtube.com/live/xMJxPNfxOos" class="gaming-link" target="_blank">Watch Stream →</a>
-                </div>
-
-                <div class="scrim-card">
-                    <h3>Day 5 - BGMI Scrims</h3>
-                    <p>Final day of competitive series with concluding matches</p>
-                    <a href="https://www.youtube.com/live/8SQAJVuSm9E" class="gaming-link" target="_blank">Watch Stream →</a>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>Future</h3>
+                        <p>Continuing to push boundaries, reimagining what's possible in cinematic digital storytelling.</p>
+                    </div>
                 </div>
             </div>
 
-            <p class="gaming-note">This experience taught us the value of collaboration, streaming, and audience engagement - skills we now apply to cinematic storytelling.</p>
+            <div class="story-stats">
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years of Production</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Stories to Tell</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Creative Possibilities</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2 class="section-title">About Us</h2>
-            <p class="about-text">We are a creative production house dedicated to telling compelling stories through film and visual media. Our team combines artistic vision with technical expertise to bring narratives to life.</p>
-            
-            <div class="features-grid">
-                <div class="feature">
-                    <h3>Creative Vision</h3>
-                    <p>Bold storytelling with artistic depth</p>
-                </div>
-                <div class="feature">
-                    <h3>Quality Production</h3>
-                    <p>Professional standards in every frame</p>
-                </div>
-                <div class="feature">
-                    <h3>Innovation</h3>
-                    <p>Pushing boundaries of visual media</p>
-                </div>
-                <div class="feature">
-                    <h3>Collaboration</h3>
-                    <p>Working with talented creatives worldwide</p>
+    <section class="about-section">
+        <div class="section-container">
+            <div class="about-content">
+                <h2 class="section-title">Why Silent Brother?</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="about-icon">💡</div>
+                        <h3>Innovation First</h3>
+                        <p>Pioneering techniques in Minecraft cinematography that redefine platform capabilities.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-icon">🎨</div>
+                        <h3>Creative Vision</h3>
+                        <p>Artistic storytelling combined with technical excellence for uncompromising quality.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-icon">⚙️</div>
+                        <h3>Efficiency</h3>
+                        <p>Cost-effective production without sacrificing professional cinema standards.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-icon">🌟</div>
+                        <h3>Excellence</h3>
+                        <p>Every frame meticulously crafted to cinema standards with unwavering attention to detail.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="submit-btn">Send Message</button>
-            <div class="form-message" id="formMessage"></div>
-        </form>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2>Ready to Join the Revolution?</h2>
+            <p>Be part of Silent Brother and shape the future of cinematic storytelling</p>
+            <a href="credits.html" class="btn btn-primary btn-large">Explore Team</a>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Production House. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">Twitter</a>
-            <a href="#" class="social-link">LinkedIn</a>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Silent Brother</h4>
+                <p>Cinematic storytelling through Minecraft cinema.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#featured">Featured</a></li>
+                    <li><a href="credits.html">Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Silent Brother. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

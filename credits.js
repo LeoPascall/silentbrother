@@ -378,84 +378,92 @@ document.querySelectorAll('.crew-card').forEach(card => {
     observer.observe(card);
 });
 
-// Observe collaboration cards
-document.querySelectorAll('.collab-card').forEach(card => {
-    observer.observe(card);
-});
-
 // Observe section titles
 document.querySelectorAll('.section-title').forEach(title => {
     observer.observe(title);
 });
 
-// Observe contact form
-const collabForm = document.querySelector('.collab-form');
-if (collabForm) {
-    observer.observe(collabForm);
+// Observe registration form
+const registrationForm = document.querySelector('.registration-form');
+if (registrationForm) {
+    observer.observe(registrationForm);
 }
 
-// ===== Form Submission for Collaboration =====
-if (collabForm) {
-    collabForm.addEventListener('submit', async function (e) {
+// ===== Form Submission for Registration =====
+if (registrationForm) {
+    registrationForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         const nameInput = this.querySelector('input[type="text"]');
         const emailInput = this.querySelector('input[type="email"]');
-        const roleSelect = this.querySelector('select');
+        const skillsTextarea = this.querySelectorAll('textarea')[0];
+        const experienceTextarea = this.querySelectorAll('textarea')[1];
         const portfolioInput = this.querySelector('input[type="url"]');
-        const messageInput = this.querySelector('textarea');
+        const photoInput = this.querySelector('#photo');
+        const videoInput = this.querySelector('#video');
         const button = this.querySelector('button');
-        const messageDiv = document.getElementById('collabMessage');
+        const messageDiv = document.getElementById('registrationMessage');
 
         // Validation
-        if (!nameInput.value.trim() || !emailInput.value.trim() || !roleSelect.value || !portfolioInput.value.trim() || !messageInput.value.trim()) {
-            alert('Please fill in all fields');
+        if (!nameInput.value.trim() || !emailInput.value.trim() || !skillsTextarea.value.trim() || !experienceTextarea.value.trim() || !portfolioInput.value.trim()) {
+            alert('Please fill in all required fields');
             return;
         }
 
         const originalText = button.textContent;
-        button.textContent = 'Sending...';
+        button.textContent = 'Submitting...';
         button.disabled = true;
-        messageDiv.textContent = 'Sending your inquiry...';
+        messageDiv.textContent = 'Sending your registration...';
         messageDiv.className = 'form-message loading';
 
         try {
-            const formData = new FormData();
-            formData.append('_captcha', 'false');
-            formData.append('name', nameInput.value);
-            formData.append('email', emailInput.value);
-            formData.append('role', roleSelect.value);
-            formData.append('portfolio', portfolioInput.value);
-            formData.append('message', messageInput.value);
-            formData.append('_subject', `Collaboration Inquiry from ${nameInput.value} - Silent Brother`);
-            formData.append('_template', 'table');
+            // Send to email using FormSubmit
+            const emailFormData = new FormData();
+            emailFormData.append('_captcha', 'false');
+            emailFormData.append('name', nameInput.value);
+            emailFormData.append('email', emailInput.value);
+            emailFormData.append('skills', skillsTextarea.value);
+            emailFormData.append('experience', experienceTextarea.value);
+            emailFormData.append('portfolio', portfolioInput.value);
+            
+            // Add file info if provided
+            if (photoInput.files.length > 0) {
+                emailFormData.append('photo', `${photoInput.files[0].name} (${(photoInput.files[0].size / 1024).toFixed(2)} KB)`);
+            }
 
-            const response = await fetch('https://formsubmit.co/dualozonebusiness@gmail.com', {
+            if (videoInput.files.length > 0) {
+                emailFormData.append('video', `${videoInput.files[0].name} (${(videoInput.files[0].size / 1024 / 1024).toFixed(2)} MB)`);
+            }
+            
+            emailFormData.append('_subject', `New Registration from ${nameInput.value} - Silent Brother`);
+            emailFormData.append('_template', 'table');
+
+            const response = await fetch('https://formsubmit.co/dualoznebusiness@gmail.com', {
                 method: 'POST',
-                body: formData
+                body: emailFormData
             });
 
             if (response.ok) {
-                button.textContent = 'Inquiry Sent! ✓';
+                button.textContent = 'Registration Submitted! ✓';
                 button.style.background = 'linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)';
-                messageDiv.textContent = '✓ Your collaboration inquiry has been sent successfully';
+                messageDiv.textContent = '✓ Your registration has been submitted successfully. We\'ll review your profile and get back to you soon!';
                 messageDiv.className = 'form-message success';
 
                 setTimeout(() => {
-                    collabForm.reset();
+                    registrationForm.reset();
                     button.textContent = originalText;
                     button.style.background = '';
                     button.disabled = false;
                     messageDiv.textContent = '';
-                }, 3000);
+                }, 4000);
             } else {
-                throw new Error('Failed to send inquiry');
+                throw new Error('Failed to submit registration');
             }
         } catch (error) {
-            console.error('Error sending inquiry:', error);
-            button.textContent = 'Error sending inquiry';
+            console.error('Error submitting registration:', error);
+            button.textContent = 'Error submitting registration';
             button.style.background = 'linear-gradient(135deg, #ff006e 0%, #ff4d94 100%)';
-            messageDiv.textContent = '✗ Failed to send inquiry. Please try again.';
+            messageDiv.textContent = '✗ Failed to submit registration. Please try again.';
             messageDiv.className = 'form-message error';
 
             setTimeout(() => {
@@ -467,7 +475,23 @@ if (collabForm) {
     });
 }
 
-// ===== Smooth Scroll for Credits Page =====
+// ===== Discord Webhook Configuration =====
+// Replace with your actual Discord webhook URL
+// To create a webhook: Server Settings > Integrations > Webhooks > Create Webhook
+const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1463615098894680064/JKjezioZVNyAip1QfcHK8_H3mi4p8qy4hnUYn5JIZdKIMHBinFbzQfVlZfmFsJrrpS9N';
+
+// Function to upload file to Discord
+async function uploadFileToDiscord(file) {
+    if (!file) return null;
+    
+    // Since we can't directly upload to Discord from client-side, we'll include file info in the message
+    // For actual file upload, you'll need a backend service
+    return {
+        name: file.name,
+        size: file.size,
+        type: file.type
+    };
+}
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();

@@ -1,4 +1,4 @@
-/* ===== CREDITS PAGE - COMPLETE MODERN REDESIGN ===== */
+/* ===== CREDITS PAGE - COMPLETE REDESIGN ===== */
 
 /* Hero Section */
 .credits-hero {
@@ -75,6 +75,12 @@
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    hover: &:hover {
+        border-color: #8b5cf6;
+        background: rgba(30, 20, 60, 0.9);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+    }
 }
 
 .team-member:hover {
@@ -407,15 +413,6 @@
     }
 }
 
-/* Active Page Indicator */
-.active-page {
-    color: var(--accent) !important;
-}
-
-.active-page::after {
-    width: 100% !important;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     .credits-hero {
@@ -459,4 +456,17 @@
     .file-uploads {
         grid-template-columns: 1fr;
     }
+}
+
+/* Dark Mode Adjustments */
+.team-member {
+    background: rgba(20, 13, 47, 0.8);
+}
+
+.crew-category {
+    background: rgba(20, 13, 47, 0.6);
+}
+
+.registration-form {
+    background: rgba(20, 13, 47, 0.5);
 }

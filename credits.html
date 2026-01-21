@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credits & Cast - Silent Brother</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="credits.css">
+    <title>Team & Credits - Silent Brother</title>
+    <link rel="icon" type="image/png" href="https://surprised-lavender-zzc35dj0lk.edgeone.app/ChatGPT%20Image%20Jan%2022,%202026,%2001_10_07%20AM.png">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <!-- Interactive Background -->
+    <!-- Background -->
     <div class="background-container">
         <canvas id="bg-canvas"></canvas>
         <div class="gradient-overlay"></div>
@@ -18,133 +18,166 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <span class="logo-text">●</span>
-                <span class="logo-label">Silent Brother</span>
+                <div class="logo-icon">●</div>
+                <span class="logo-text">Silent Brother</span>
             </div>
             <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
             </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#hero" class="nav-link">Home</a></li>
+                <li><a href="index.html#featured" class="nav-link">Featured</a></li>
                 <li><a href="index.html#projects" class="nav-link">Projects</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-                <li><a href="credits.html" class="nav-link active-page">Credits</a></li>
+                <li><a href="index.html#story" class="nav-link">Story</a></li>
+                <li><a href="credits.html" class="nav-link">Team</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="credits-hero" class="credits-hero">
+    <section class="team-hero">
         <div class="hero-content">
-            <h1 class="hero-title fade-in">Credits & Cast</h1>
-            <p class="hero-subtitle fade-in">Meet the talented minds behind Silent Brother</p>
-        </div>
-    </section>
-
-    <!-- 3D Scene Container -->
-    <div id="canvas-3d" class="canvas-3d"></div>
-
-    <!-- Cast Section -->
-    <section id="cast" class="cast-section">
-        <div class="section-container">
-            <h2 class="section-title">Cast</h2>
-            
-            <div class="crew-grid">
-                <div class="crew-card">
-                    <div class="crew-image" style="background: linear-gradient(135deg, #FF6B6B 0%, #C92A2A 100%);"></div>
-                    <div class="crew-info">
-                        <h3 class="crew-name">Lead Actor Name</h3>
-                        <p class="crew-role">Main Character</p>
-                        <p class="crew-bio">Bringing depth and emotion to the protagonist's journey through the Minecraft cinematic universe.</p>
-                        <div class="crew-portfolio">
-                            <a href="#" class="portfolio-link" target="_blank">View Portfolio →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="crew-card">
-                    <div class="crew-image" style="background: linear-gradient(135deg, #4ECDC4 0%, #1A9B8E 100%);"></div>
-                    <div class="crew-info">
-                        <h3 class="crew-name">Supporting Actor</h3>
-                        <p class="crew-role">Antagonist</p>
-                        <p class="crew-bio">Creating a compelling opposing force that drives the narrative tension throughout the production.</p>
-                        <div class="crew-portfolio">
-                            <a href="#" class="portfolio-link" target="_blank">View Portfolio →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="crew-card">
-                    <div class="crew-image" style="background: linear-gradient(135deg, #FFE66D 0%, #FFA94D 100%);"></div>
-                    <div class="crew-info">
-                        <h3 class="crew-name">Cast Member</h3>
-                        <p class="crew-role">Supporting Role</p>
-                        <p class="crew-bio">Adding dimension and authenticity to the world of Silent Brother with exceptional performance.</p>
-                        <div class="crew-portfolio">
-                            <a href="#" class="portfolio-link" target="_blank">View Portfolio →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1 class="hero-title">
+                <span class="gradient-text">Meet Our</span>
+                <span class="gradient-text-alt">Creative Force</span>
+            </h1>
+            <p class="hero-subtitle">Talented minds shaping cinema through innovation</p>
         </div>
     </section>
 
     <!-- Directors Section -->
-    <section id="directors" class="directors-section">
+    <section class="team-section directors-section">
         <div class="section-container">
-            <h2 class="section-title">Directors & Creators</h2>
+            <div class="section-header">
+                <h2 class="section-title">Directors & Visionaries</h2>
+                <p class="section-subtitle">Leading the creative direction</p>
+            </div>
+            
+            <div class="team-grid-large">
+                <div class="team-card-large">
+                    <div class="team-card-visual">
+                        <div class="team-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <div class="team-badge">Director</div>
+                    </div>
+                    <div class="team-card-content">
+                        <h3>AYUSH</h3>
+                        <p class="role">Director & Creator</p>
+                        <p class="bio">Visionary filmmaker pushing the boundaries of Minecraft cinematography with innovative storytelling techniques and creative excellence.</p>
+                        <div class="skills">
+                            <span class="skill-tag">Cinematography</span>
+                            <span class="skill-tag">Direction</span>
+                            <span class="skill-tag">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card-large">
+                    <div class="team-card-visual">
+                        <div class="team-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                        <div class="team-badge">Director</div>
+                    </div>
+                    <div class="team-card-content">
+                        <h3>HARSH</h3>
+                        <p class="role">Director & Creator</p>
+                        <p class="bio">Master of visual storytelling with cutting-edge cinematography and creative direction expertise in cinematic production.</p>
+                        <div class="skills">
+                            <span class="skill-tag">Visual Arts</span>
+                            <span class="skill-tag">Production</span>
+                            <span class="skill-tag">Creativity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cast Section -->
+    <section class="team-section cast-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Cast</h2>
+                <p class="section-subtitle">Bringing characters to life</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #FF6B6B 0%, #C92A2A 100%);"></div>
+                    <h3>Rahul</h3>
+                    <p class="role">Lead Actor</p>
+                    <p class="bio">Bringing depth and emotion to protagonist's journey</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #4ECDC4 0%, #1A9B8E 100%);"></div>
+                    <h3>Coming Soon</h3>
+                    <p class="role">Cast Member</p>
+                    <p class="bio">Currently casting for additional roles</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #FFE66D 0%, #FFA94D 100%);"></div>
+                    <h3>Coming Soon</h3>
+                    <p class="role">Cast Member</p>
+                    <p class="bio">Currently casting for additional roles</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crew Section -->
+    <section class="team-section crew-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">Production Crew</h2>
+                <p class="section-subtitle">Expert craftspeople behind the scenes</p>
+            </div>
             
             <div class="crew-grid">
-                <div class="crew-card featured-card">
-                    <div class="crew-image" style="background: linear-gradient(135deg, #6C5CE7 0%, #A29BFE 100%);"></div>
-                    <div class="crew-info">
-                        <h3 class="crew-name">Director & Visionary</h3>
-                        <p class="crew-role">Creative Director</p>
-                        <p class="crew-bio">Pioneering cinematic storytelling within Minecraft, pushing the boundaries of visual narrative and technical excellence. Available for innovative projects and collaborations.</p>
-                        <div class="crew-stats">
-                            <div class="stat">
-                                <span class="stat-value">10+</span>
-                                <span class="stat-label">Projects</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">5M+</span>
-                                <span class="stat-label">Views</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-value">100+</span>
-                                <span class="stat-label">Collaborators</span>
+                <div class="crew-column">
+                    <h3 class="crew-category-title">Post-Production</h3>
+                    <div class="crew-items">
+                        <div class="crew-item">
+                            <div class="crew-icon">🎨</div>
+                            <div>
+                                <h4>Color Grading</h4>
+                                <p>Visual aesthetic perfection</p>
                             </div>
                         </div>
-                        <div class="crew-portfolio">
-                            <a href="#" class="portfolio-link" target="_blank">Full Portfolio →</a>
-                            <a href="#" class="portfolio-link collab-link" target="_blank">Collaborate With Us →</a>
+                        <div class="crew-item">
+                            <div class="crew-icon">✨</div>
+                            <div>
+                                <h4>Visual Effects</h4>
+                                <p>Stunning VFX & motion graphics</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="crew-card">
-                    <div class="crew-image" style="background: linear-gradient(135deg, #FD79A8 0%, #FDCB6E 100%);"></div>
-                    <div class="crew-info">
-                        <h3 class="crew-name">Cinematographer</h3>
-                        <p class="crew-role">Director of Photography</p>
-                        <p class="crew-bio">Master of visual storytelling through cutting-edge camera work and cinematic composition. Open for collaboration on high-impact visual projects.</p>
-                        <div class="crew-portfolio">
-                            <a href="#" class="portfolio-link" target="_blank">View Portfolio →</a>
+                        <div class="crew-item">
+                            <div class="crew-icon">✂️</div>
+                            <div>
+                                <h4>Editor</h4>
+                                <p>Narrative assembly & pacing</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="crew-card">
-                    <div class="crew-image" style="background: linear-gradient(135deg, #00B894 0%, #55EFC4 100%);"></div>
-                    <div class="crew-info">
-                        <h3 class="crew-name">Producer</h3>
-                        <p class="crew-role">Executive Producer</p>
-                        <p class="crew-bio">Overseeing production logistics and ensuring seamless collaboration across all creative departments for world-class results.</p>
-                        <div class="crew-portfolio">
-                            <a href="#" class="portfolio-link" target="_blank">View Portfolio →</a>
+                <div class="crew-column">
+                    <h3 class="crew-category-title">Technical</h3>
+                    <div class="crew-items">
+                        <div class="crew-item">
+                            <div class="crew-icon">⚙️</div>
+                            <div>
+                                <h4>Technical Director</h4>
+                                <p>Minecraft technical expertise</p>
+                            </div>
+                        </div>
+                        <div class="crew-item">
+                            <div class="crew-icon">🎬</div>
+                            <div>
+                                <h4>Animation Director</h4>
+                                <p>Character & movement animation</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -152,124 +185,88 @@
         </div>
     </section>
 
-    <!-- Key Crew Section -->
-    <section id="crew" class="crew-section">
+    <!-- Recruitment Section -->
+    <section class="team-section recruitment-section">
         <div class="section-container">
-            <h2 class="section-title">Key Crew</h2>
+            <div class="section-header">
+                <h2 class="section-title">Join the Team</h2>
+                <p class="section-subtitle">Shape the future of cinematic storytelling</p>
+            </div>
             
-            <div class="crew-list">
-                <div class="crew-role-group">
-                    <h3 class="role-title">Audio & Music</h3>
-                    <div class="crew-roles">
-                        <div class="role-item">
-                            <span class="role-name">Sound Designer</span>
-                            <p class="role-description">Crafting immersive audio landscapes and dynamic soundscapes</p>
-                        </div>
-                        <div class="role-item">
-                            <span class="role-name">Composer</span>
-                            <p class="role-description">Creating original musical scores that enhance emotional impact</p>
-                        </div>
+            <p class="recruitment-intro">Are you passionate about film, animation, or production? We're always seeking talented creatives to join Silent Brother!</p>
+
+            <form class="application-form" id="registrationForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
                     </div>
                 </div>
 
-                <div class="crew-role-group">
-                    <h3 class="role-title">Post-Production</h3>
-                    <div class="crew-roles">
-                        <div class="role-item">
-                            <span class="role-name">Color Grading</span>
-                            <p class="role-description">Perfecting visual aesthetic through color correction and grading</p>
-                        </div>
-                        <div class="role-item">
-                            <span class="role-name">Visual Effects</span>
-                            <p class="role-description">Creating stunning VFX and motion graphics sequences</p>
-                        </div>
-                        <div class="role-item">
-                            <span class="role-name">Editor</span>
-                            <p class="role-description">Assembling footage into a cohesive and engaging narrative</p>
-                        </div>
+                <div class="form-group">
+                    <textarea placeholder="Your Skills (e.g., Video Editing, Animation, Cinematography, 3D Modeling)" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea placeholder="Your Experience & Achievements" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input type="url" placeholder="Portfolio URL or Social Profile" required>
+                </div>
+
+                <div class="file-section">
+                    <div class="file-group">
+                        <label for="photo" class="file-label">
+                            <span class="file-icon">📸</span>
+                            <span>Your Photo (Optional)</span>
+                        </label>
+                        <input type="file" id="photo" accept="image/*" class="file-input">
+                    </div>
+
+                    <div class="file-group">
+                        <label for="video" class="file-label">
+                            <span class="file-icon">🎥</span>
+                            <span>Your Demo Reel (Optional)</span>
+                        </label>
+                        <input type="file" id="video" accept="video/*" class="file-input">
                     </div>
                 </div>
 
-                <div class="crew-role-group">
-                    <h3 class="role-title">Technical</h3>
-                    <div class="crew-roles">
-                        <div class="role-item">
-                            <span class="role-name">Technical Director</span>
-                            <p class="role-description">Managing technical aspects of Minecraft cinematography</p>
-                        </div>
-                        <div class="role-item">
-                            <span class="role-name">Animation Director</span>
-                            <p class="role-description">Directing character animation and movement sequences</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Collaboration Section -->
-    <section id="collaboration" class="collaboration-section">
-        <div class="section-container">
-            <h2 class="section-title">Join Our Crew</h2>
-            <p class="collab-subtitle">We're always looking for talented creators to collaborate with</p>
-            
-            <div class="collab-grid">
-                <div class="collab-card">
-
-                    <div class="collab-icon">✂️</div>
-                    <h3>Editor</h3>
-                    <p>Shape our stories through expert editing. We're seeking talented editors to craft compelling narratives through visual and audio post-production.</p>
-                    <a href="#contact-collab" class="collab-button">Contact Us</a>
-                </div>
-
-                <div class="collab-card">
-                    <div class="collab-icon">💼</div>
-                    <h3>Brand Manager</h3>
-                    <p>Help us grow our brand and audience. We're looking for strategic brand managers to expand our reach and build meaningful connections.</p>
-                    <a href="#contact-collab" class="collab-button">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Collaboration Section -->
-    <section id="contact-collab" class="contact-collab">
-        <div class="section-container">
-            <h2 class="section-title">Let's Collaborate</h2>
-            <form class="contact-form collab-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <select required>
-                        <option value="">Select Your Role</option>
-                        <option value="actor">Actor</option>
-                        <option value="editor">Editor</option>
-                        <option value="brand-manager">Brand Manager</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="url" placeholder="Your Portfolio URL" required>
-                </div>
-                <div class="form-group">
-                    <textarea placeholder="Tell us about yourself and your work..." rows="5" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn collab-submit">Send Collaboration Inquiry</button>
-                <div class="form-message" id="collabMessage"></div>
+                <button type="submit" class="btn btn-primary btn-large">Submit Application</button>
+                <div class="form-message" id="registrationMessage"></div>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2026 Silent Brother Production House. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#" class="social-link">Instagram</a>
-            <a href="#" class="social-link">Twitter</a>
-            <a href="#" class="social-link">LinkedIn</a>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Silent Brother</h4>
+                <p>Building exceptional creative teams for cinematic excellence.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#featured">Featured</a></li>
+                    <li><a href="index.html#story">Story</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Silent Brother. All rights reserved.</p>
         </div>
     </footer>
 
