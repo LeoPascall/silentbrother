@@ -405,6 +405,7 @@ if (collabForm) {
         const portfolioInput = this.querySelector('input[type="url"]');
         const messageInput = this.querySelector('textarea');
         const button = this.querySelector('button');
+        const messageDiv = document.getElementById('collabMessage');
 
         // Validation
         if (!nameInput.value.trim() || !emailInput.value.trim() || !roleSelect.value || !portfolioInput.value.trim() || !messageInput.value.trim()) {
@@ -415,6 +416,8 @@ if (collabForm) {
         const originalText = button.textContent;
         button.textContent = 'Sending...';
         button.disabled = true;
+        messageDiv.textContent = 'Sending your inquiry...';
+        messageDiv.className = 'form-message loading';
 
         try {
             const formData = new FormData();
@@ -435,13 +438,16 @@ if (collabForm) {
             if (response.ok) {
                 button.textContent = 'Inquiry Sent! ✓';
                 button.style.background = 'linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)';
+                messageDiv.textContent = '✓ Your collaboration inquiry has been sent successfully';
+                messageDiv.className = 'form-message success';
 
                 setTimeout(() => {
                     collabForm.reset();
                     button.textContent = originalText;
                     button.style.background = '';
                     button.disabled = false;
-                }, 2000);
+                    messageDiv.textContent = '';
+                }, 3000);
             } else {
                 throw new Error('Failed to send inquiry');
             }
@@ -449,6 +455,8 @@ if (collabForm) {
             console.error('Error sending inquiry:', error);
             button.textContent = 'Error sending inquiry';
             button.style.background = 'linear-gradient(135deg, #ff006e 0%, #ff4d94 100%)';
+            messageDiv.textContent = '✗ Failed to send inquiry. Please try again.';
+            messageDiv.className = 'form-message error';
 
             setTimeout(() => {
                 button.textContent = originalText;
