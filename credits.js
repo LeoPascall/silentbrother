@@ -417,33 +417,32 @@ if (registrationForm) {
         messageDiv.className = 'form-message loading';
 
         try {
-            // Send to email using FormSubmit
-            const emailFormData = new FormData();
-            emailFormData.append('_captcha', 'false');
-            emailFormData.append('name', nameInput.value);
-            emailFormData.append('email', emailInput.value);
-            emailFormData.append('skills', skillsTextarea.value);
-            emailFormData.append('experience', experienceTextarea.value);
-            emailFormData.append('portfolio', portfolioInput.value);
+            // Create FormData for file uploads
+            const formData = new FormData();
+            formData.append('name', nameInput.value);
+            formData.append('email', emailInput.value);
+            formData.append('skills', skillsTextarea.value);
+            formData.append('experience', experienceTextarea.value);
+            formData.append('portfolio', portfolioInput.value);
             
-            // Add file info if provided
+            // Add file inputs if provided
             if (photoInput.files.length > 0) {
-                emailFormData.append('photo', `${photoInput.files[0].name} (${(photoInput.files[0].size / 1024).toFixed(2)} KB)`);
+                formData.append('photo', photoInput.files[0]);
             }
 
             if (videoInput.files.length > 0) {
-                emailFormData.append('video', `${videoInput.files[0].name} (${(videoInput.files[0].size / 1024 / 1024).toFixed(2)} MB)`);
+                formData.append('video', videoInput.files[0]);
             }
-            
-            emailFormData.append('_subject', `New Registration from ${nameInput.value} - Silent Brother`);
-            emailFormData.append('_template', 'table');
 
-            const response = await fetch('https://formsubmit.co/dualoznebusiness@gmail.com', {
+            // Send to backend server
+            const response = await fetch('http://localhost:3000/api/submit-registration', {
                 method: 'POST',
-                body: emailFormData
+                body: formData
             });
 
-            if (response.ok) {
+            const data = await response.json();
+
+            if (response.ok && data.success) {
                 button.textContent = 'Registration Submitted! ✓';
                 button.style.background = 'linear-gradient(135deg, #00d4ff 0%, #0099cc 100%)';
                 messageDiv.textContent = '✓ Your registration has been submitted successfully. We\'ll review your profile and get back to you soon!';
@@ -457,40 +456,22 @@ if (registrationForm) {
                     messageDiv.textContent = '';
                 }, 4000);
             } else {
-                throw new Error('Failed to submit registration');
+                throw new Error(data.message || 'Failed to submit registration');
             }
         } catch (error) {
             console.error('Error submitting registration:', error);
             button.textContent = 'Error submitting registration';
             button.style.background = 'linear-gradient(135deg, #ff006e 0%, #ff4d94 100%)';
-            messageDiv.textContent = '✗ Failed to submit registration. Please try again.';
+            messageDiv.textContent = '✗ Failed to submit registration. Make sure the backend server is running on port 3000.';
             messageDiv.className = 'form-message error';
 
             setTimeout(() => {
                 button.textContent = originalText;
                 button.style.background = '';
                 button.disabled = false;
-            }, 2000);
+            }, 3000);
         }
     });
-}
-
-// ===== Discord Webhook Configuration =====
-// Replace with your actual Discord webhook URL
-// To create a webhook: Server Settings > Integrations > Webhooks > Create Webhook
-const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1463615098894680064/JKjezioZVNyAip1QfcHK8_H3mi4p8qy4hnUYn5JIZdKIMHBinFbzQfVlZfmFsJrrpS9N';
-
-// Function to upload file to Discord
-async function uploadFileToDiscord(file) {
-    if (!file) return null;
-    
-    // Since we can't directly upload to Discord from client-side, we'll include file info in the message
-    // For actual file upload, you'll need a backend service
-    return {
-        name: file.name,
-        size: file.size,
-        type: file.type
-    };
 }
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
